@@ -48,16 +48,18 @@ def nparse(day,mon):
 
 def get(clas,day,mon):
  text=nparse(day,mon)
- '''
-
-.∧＿∧
-( ･ω･｡)つ━☆・*。
-⊂. ノ ...・゜+.
-しーＪ...°。+ *´¨)
-..........· ´¸.·*´¨) ¸.·*¨)
-..........(¸.·´ (¸.·'* ☆  your code ☆
-
- '''
+ n = int(''.join(list(clas)[:-1]))
+ x = []
+ for z in text:
+  if (clas in z)  or  ((str(n)+'-е классы') in z):
+   x.append(z)
+  else:
+   for i in range(1,n):
+    for j in range (n,12):
+     if (str(i)+'-'+str(j)+'-е классы') in z:
+      x.append(z)
+ text = x
+ 
  return text
 
 print(get('9А','20','0'))  #20 января
